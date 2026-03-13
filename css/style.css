@@ -116,7 +116,7 @@ address .fa-download {
 .jumbotron .col-md-2 {
 	width: 30%;
 	color: #000;
-	padding-top: 62px
+	padding-top: 41px
 }
 .jumbotron .col-md-2 p.phone {
 	margin-bottom: 10px;
@@ -135,7 +135,8 @@ address .fa-download {
 	color: #000;
 	font-weight: bold;
 	font-size: 60px;
-	margin-top: 62px;
+	margin-top: 41px;
+	margin-bottom: 0px;
 }
 .jumbotron h2 {
 	font-weight: bold;
@@ -162,7 +163,6 @@ address .fa-download {
 	margin-bottom: 0px;
 	background: none!important;
 	overflow: hidden;
-	position: absolute;
 }
 .social li {
 	float: left;
@@ -441,7 +441,7 @@ address .fa-download {
 	color: #000
 }
 .portfolio .item-content {
-	height: 405px;
+	height: 390px;
 }
 .portfolio .item-content .img {
 	margin-bottom: 10px;
@@ -1055,7 +1055,10 @@ section {
 		margin: 0px auto;
 	}
 	.portfolio .container-portfolio .col-md-4 {
-		width: 390px
+		width: 370px
+	}
+	.portfolio .item-content {
+		height: 370px;
 	}
 }
 @media (max-width:1200px) {
@@ -1065,6 +1068,9 @@ section {
 	}
 	.portfolio .container-portfolio .col-md-4 {
 		width: 320px
+	}
+	.portfolio .item-content {
+		height: 320px;
 	}
 }
  @media (max-width:940px) {
@@ -1118,8 +1124,6 @@ section {
 	padding-bottom: 30px;
 }
 .social {
-	position: absolute;
-	bottom: 10px;
 	padding-top: 8px;
 	padding-bottom: 3px
 }
@@ -1239,7 +1243,7 @@ address {
 }
 .jumbotron .col-md-2 {
 	width: 100%;
-	padding-bottom: 15px;
+	padding-bottom: 5px;
 	padding-top: 0px
 }
 .jumbotron .col-md-2 p.phone {
@@ -1314,9 +1318,6 @@ address{
 }
 .timeline .row .col-md-9 {
 	width: 70%;
-}
-.social {
-	padding-top: 5px
 }
 /* Portfolio */
 .portfolio .container-portfolio {
