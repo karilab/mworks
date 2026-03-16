@@ -916,7 +916,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	height: 120px
 }
 .project .section {
-	padding-top: 160px!important;
+	padding: 160px 0 90px!important;
 	z-index: 0
 }
 .project .go-back {
