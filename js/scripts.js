@@ -299,106 +299,105 @@
 	var stateObj = {foo: "bar"};
     var pathname = window.location.pathname;
 	
-	function AnimateLightBox( poplink, postWidth ){
-		
-		var contentWidth = postWidth ? 0.62 : 0.75; 
-		
-		if ( postWidth ) {
-			screenWidth = ($(window).width() * contentWidth) > 770 ?  770 : $(window).width() * contentWidth;
-		} else {
-			screenWidth = ($(window).width() * contentWidth) > 1370 ?  1370 : $(window).width() * contentWidth;
-		}
-		
-		marginLeft =  ((screenWidth) / 2);
-		
-		// Change the url of the page to the one in the post
-		history.pushState( stateObj, 'page', poplink );
-				
-		$('body').append('<div class="overlay" /><div class="overlay-container" />').addClass('noscroll');
-		
-		$('.overlay').animate({ opacity : '1' },'fast', function(){
-			
-			$('.overlay-container').append('<div class="popup-back load-lightbox" /><div class="close-btn"><span class="left"></span><span class="right"></span></div><div class="popup" /> ');
+	function AnimateLightBox(poplink, postWidth) {
+	var windowWidth = $(window).width();
+	var contentWidth = postWidth ? 0.62 : 0.75;
 
-			$.ajax({
-				url: poplink,
-				data: {},
-				cache: false,
-				success: function(data){
-					// Change the url of the page to the one in the post
-					history.pushState( stateObj, 'page', poplink );			
-					
-					$('.popup').empty().css({marginLeft : -marginLeft + 'px',  width : screenWidth + 'px'});
-					
-					if ( $(window).width() > 940 ){
-						$('.popup').addClass('animated bounceInLeft')
-					} else {
-						$('.popup').animate({top: '+=100', opacity: 1}, 'fast','swing');
-					}
-					
-					$('.popup-back').removeClass('load-lightbox');
-					// Get the information from the portfolio div
-					$('.popup').html($(data).find('.content-element')).fadeIn();				
-					
-					$('.popup-back, .close-btn').on ('click touchend',  function(e){
-						
-						$('.popup').animate({top: '-=140', opacity: 0}, 'fast','linear', function(){
-							$('.overlay-container, .overlay').fadeOut('fast',function(){
-								$(this).remove();
-								$('body').removeClass('noscroll');
-							});
-														
-							history.pushState(stateObj, "page", pathname);
+	if (windowWidth <= 767) {
+		screenWidth = windowWidth;
+		marginLeft = screenWidth / 2;
+	} else {
+		if (postWidth) {
+			screenWidth = (windowWidth * contentWidth) > 770 ? 770 : windowWidth * contentWidth;
+		} else {
+			screenWidth = (windowWidth * contentWidth) > 1370 ? 1370 : windowWidth * contentWidth;
+		}
+
+		marginLeft = screenWidth / 2;
+	}
+
+	history.pushState(stateObj, 'page', poplink);
+
+	$('body').append('<div class="overlay" /><div class="overlay-container" />').addClass('noscroll');
+
+	$('.overlay').animate({ opacity: '1' }, 'fast', function () {
+
+		$('.overlay-container').append('<div class="popup-back load-lightbox" /><div class="close-btn"><span class="left"></span><span class="right"></span></div><div class="popup" /> ');
+
+		$.ajax({
+			url: poplink,
+			data: {},
+			cache: false,
+			success: function (data) {
+				history.pushState(stateObj, 'page', poplink);
+
+				$('.popup').empty().css({
+					marginLeft: -marginLeft + 'px',
+					width: screenWidth + 'px'
+				});
+
+				if ($(window).width() > 940) {
+					$('.popup').addClass('animated bounceInLeft');
+				} else {
+					$('.popup').animate({ top: '+=100', opacity: 1 }, 'fast', 'swing');
+				}
+
+				$('.popup-back').removeClass('load-lightbox');
+				$('.popup').html($(data).find('.content-element')).fadeIn();
+
+				$('.popup-back, .close-btn').on('click touchend', function (e) {
+					$('.popup').animate({ top: '-=140', opacity: 0 }, 'fast', 'linear', function () {
+						$('.overlay-container, .overlay').fadeOut('fast', function () {
+							$(this).remove();
+							$('body').removeClass('noscroll');
 						});
-					})						   																
-				},
-				complete: function(){	
-				
-					function scroller(){	
-					
-						var popHeight = $('.popup').height();
-					   $('.popup-back').height(popHeight);	
-						
-						if (! /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-									$('.overlay-container').niceScroll({ autohidemode : false, cursorwidth: 9, cursorborder: "1px solid #fff", scrollspeed:100, cursorcolor: '#919191'});
-										
-								}		
-					  } // Scroller			
-									
-					if 	( $('.flexslider').length > 0 ){			
-					
-					// Flexslider for lightbox		
-					  $('.flexslider').fitVids().flexslider({
-						animation: "fade",
-						smoothHeight: true,
-						useCSS: true, 
-						touch: true,
-						video: true, 
-						pauseOnHover: false,
-						slideshow: false,
-						start: function( slider ){
-							
-							var sliderHeight = slider.slides.eq(0).height();
-							slider.height(sliderHeight);
-							
-							setTimeout(scroller, 600); // wait until the pop up resizes				
-														
-						 }//start
-						 						 
-					  }); //flexslider
-					} else {
-					
-					   if ( $('iframe').length > 0 ){					
-					   		$('.media').fitVids();
-						}
-					   setTimeout(scroller, 600); // wait until the pop up resizes	
-								
+
+						history.pushState(stateObj, "page", pathname);
+					});
+				});
+			},
+			complete: function () {
+				function scroller() {
+					var popHeight = $('.popup').height();
+					$('.popup-back').height(popHeight);
+
+					if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+						$('.overlay-container').niceScroll({
+							autohidemode: false,
+							cursorwidth: 9,
+							cursorborder: "1px solid #fff",
+							scrollspeed: 100,
+							cursorcolor: '#919191'
+						});
 					}
 				}
-			});//ajax		
-		});
 
-	}
+				if ($('.flexslider').length > 0) {
+					$('.flexslider').fitVids().flexslider({
+						animation: "fade",
+						smoothHeight: true,
+						useCSS: true,
+						touch: true,
+						video: true,
+						pauseOnHover: false,
+						slideshow: false,
+						start: function (slider) {
+							var sliderHeight = slider.slides.eq(0).height();
+							slider.height(sliderHeight);
+
+							setTimeout(scroller, 600);
+						}
+					});
+				} else {
+					if ($('iframe').length > 0) {
+						$('.media').fitVids();
+					}
+					setTimeout(scroller, 600);
+				}
+			}
+		});
+	});
+}
 
 	
 	// When the user click on thumbnails

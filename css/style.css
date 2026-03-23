@@ -107,7 +107,7 @@ address .fa-download {
 .jumbotron .col-md-3 {
 	width: 25%;
 	padding-left: 0px;
-	background: url(../img/camera.png) no-repeat center center;
+	/* background: url(../img/camera.png) no-repeat center center; */
 }
 .jumbotron .col-md-3 img {
 	width: 100%;
@@ -205,7 +205,7 @@ address .fa-download {
 	width: 100%;
 	position: fixed;
 	top: 0px;
-	z-index: 1
+	z-index: 2
 }
 .navbar-default .container {
 	padding: 0px;
@@ -407,7 +407,8 @@ address .fa-download {
 .portfolio h4 a {
 	color: #000;
 	font-weight: bold;
-	line-height: 1.4em
+	line-height: 1.4em;
+	white-space: nowrap;
 }
 .portfolio .more {
 	background-color: skyblue;
@@ -1143,7 +1144,9 @@ address {
 	margin-top: 7px;
 	font-size: 46px
 }
-
+.message h2{
+	width: 100%;
+}
 .print {
 	display: none
 }
@@ -1293,6 +1296,9 @@ address {
 	margin-bottom: 15px;
 	padding: 5px 10px;
 }
+.footer {
+	text-align: center
+}
 }
 @media (max-width:700px) {
 address{
@@ -1359,7 +1365,7 @@ address{
 	width: 350px
 }
 .container {
-	width: 350px
+	width: 100%;
 }
 .wrap-content .jumbotron .col-md-3 {
 	width: 100%;
@@ -1379,8 +1385,14 @@ address{
 .portfolio .item-content {
 	height: 335px
 }
-.wrap-content .portfolio .container-portfolio .col-md-4 {
+/* .wrap-content .portfolio .container-portfolio .col-md-4 {
 	width: 290px!important
+} */
+.portfolio .container-portfolio {
+	max-width: 100%!important;
+}
+.portfolio .container-portfolio .col-md-4 {
+	width: 100%!important
 }
 /* Wrap Portfolio  */
 /* .wrap-content .portfolio .container-portfolio {
@@ -1405,6 +1417,7 @@ address{
 .jumbotron .col-md-2 p {
 	display: block
 }
+
 /* .portfolio .container-portfolio .col-md-4 {
 	width: 320px
 }
