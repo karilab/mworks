@@ -1388,7 +1388,7 @@ address{
 /* .wrap-content .portfolio .container-portfolio .col-md-4 {
 	width: 290px!important
 } */
-.portfolio .container-portfolio {
+.portfolio .container-portfolio { 
 	max-width: 100%!important;
 }
 .portfolio .container-portfolio .col-md-4 {
