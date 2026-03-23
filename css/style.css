@@ -1394,6 +1394,9 @@ address{
 .portfolio .container-portfolio .col-md-4 {
 	width: 100%!important
 }
+.content-element .media {
+	margin: -30px -30px 30px;
+}
 /* Wrap Portfolio  */
 /* .wrap-content .portfolio .container-portfolio {
 	max-width: 261px;
