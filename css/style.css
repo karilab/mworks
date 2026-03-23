@@ -1408,7 +1408,7 @@ address{
 }
 @media (max-width:380px) {
 .header h2 {
-	font-size: 36px
+	font-size: 36px;
 }
 .jumbotron .col-md-3, .jumbotron .col-md-6.card {
 	width: 100%!important
