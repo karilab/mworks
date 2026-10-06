@@ -162,146 +162,6 @@
 	   
 
 	   
-	// Easy Pie chart 
-	//*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*	
-	var initPieChart = function() {
-		$('.percentage').easyPieChart({
-			barColor: barChangeColor,
-			trackColor: trackChangeColor,
-			scaleColor: false,
-			lineCap: 'butt',
-			lineWidth: 25,
-			animate: 1000,
-			size:130
-		});
-	}
-
-	
-	// Show smoth navigation for charts, progressbars and mapcanvas 
-	//*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*	
-	$('.chart').on('inview', function(event, isInView, visiblePartY) {
-		if (isInView) {			
-			initPieChart();
-		}
-	});
-		
-	$('.progress').on('inview', function(event, isInView, visiblePartY) {
-		if (isInView) {
-			$(this).addClass('inview');
-		}
-	});
-			
-	$('#map_canvas').one('inview', function(event, isInView, visiblePartY) {			
-		if ( typeof(lat) !== "undefined" || typeof(lng) !== "undefined"){	
-			initialize(lat, lng);
-		}
-	});
-	
-	
-	// Initialize map
-	//*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*		
-	function initialize(lat, lng) {		
-		var myOptions = {
-		  zoom: 16,
-		  center: new google.maps.LatLng(lat, lng),
-		  mapTypeId: google.maps.MapTypeId.ROADMAP,
-		  scrollwheel: false,
-		  mapTypeControl: false,
-		  scaleControl: false,
-		  styles: // Styling google maps
-			[
-			  {
-				"featureType": "water",
-				"stylers": [
-				  { "color": "#cccdcc" }
-				]
-			  },{
-				"featureType": "transit",
-				"stylers": [
-				  { "visibility": "off" }
-				]
-			  },{
-				"featureType": "road.highway",
-				"elementType": "geometry.fill",
-				"stylers": [
-				  { "visibility": "on" },
-				  { "color": "#c9c9ca" }
-				]
-			  },{
-				"featureType": "road.highway",
-				"elementType": "geometry.fill"  },{
-				"featureType": "road.highway",
-				"elementType": "geometry",
-				"stylers": [
-				  { "hue": "#ff0000" },
-				  { "saturation": -100 },
-				  { "lightness": 1 }
-				]
-			  },{
-				"featureType": "road.highway.controlled_access",
-				"elementType": "labels.text",
-				"stylers": [
-				  { "visibility": "on" },
-				  { "hue": "#ff0000" },
-				  { "lightness": -1 },
-				  { "gamma": 1.02 },
-				  { "weight": 0.1 }
-				]
-			  },{
-				"featureType": "road.arterial",
-				"elementType": "geometry.fill",
-				"stylers": [
-				  { "visibility": "on" },
-				  { "color": "#e8eced" }
-				]
-			  },{
-				"featureType": "road.arterial",
-				"elementType": "labels.text",
-				"stylers": [
-				  { "weight": 0.1 },
-				  { "visibility": "on" }
-				]
-			  },{
-				"featureType": "road.highway",
-				"elementType": "labels.text",
-				"stylers": [
-				  { "weight": 0.1 },
-				  { "visibility": "on" },
-				  { "color": "#333333" }
-				]
-			  },
-			   {
-				"featureType": "road.highway",
-				"elementType": "labels.text.fill",
-				"stylers": [
-				  { "visibility": "off" },
-				  { "weight": 0.1 }
-				]
-			  },
-			  
-			  {
-				"featureType": "poi",
-				"elementType": "geometry",
-				"stylers": [
-				  { "color": "#dbdadb" },
-				  { "visibility": "on" }
-				]
-			  },{
-			  }
-			]
-		};
-		
-		var map = new google.maps.Map( document.getElementById("map_canvas"), myOptions );	
-		
-		var myLatLng = new google.maps.LatLng(lat, lng);
-		var beachMarker = new google.maps.Marker({
-			position: myLatLng,
-			map: map,
-			icon: gIcon
-		});
-	}
-	
-
 	// Lightbox
 	//*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*	
 	var screenWidth, marginLeft;
@@ -361,28 +221,10 @@
 			}
 		}
 
-		if ($('.popup .flexslider').length > 0) {
-			$('.popup .flexslider').fitVids().flexslider({
-				animation: "fade",
-				smoothHeight: true,
-				useCSS: true,
-				touch: true,
-				video: true,
-				pauseOnHover: false,
-				slideshow: false,
-				start: function (slider) {
-					var sliderHeight = slider.slides.eq(0).height();
-					slider.height(sliderHeight);
-
-					setTimeout(scroller, 600);
-				}
-			});
-		} else {
-			if ($('.popup iframe').length > 0) {
-				$('.popup .media').fitVids();
-			}
-			setTimeout(scroller, 600);
+		if ($('.popup iframe').length > 0) {
+			$('.popup .media').fitVids();
 		}
+		setTimeout(scroller, 600);
 	}
 
 	if (windowWidth <= 767) {
@@ -458,37 +300,8 @@
 		}
 	})
 	
-	// Send Email 
-	//*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*	
-	$('form').submit(function(e){
-		e.preventDefault();
-		$('.loading').show();
-		$.post('sendmail.php', $('.form').serialize(), function(data){
-			$('.results').html(data);
-		}).success(function(){
-			$('.loading').hide();
-		})
-	})
-	
-	// Flexslider	
-	//*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*			
-	$('.flexslider').fitVids().flexslider({
-		animation: "fade",
-		smoothHeight: true,
-		useCSS: true,
-		pauseOnHover: false,
-		touch: true,
-		video: true,
-		slideshow: false 
-
-	});
-	
 	// Fit videos not in a slider	
 	//*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*	
 	$('.media').fitVids();
-	
-	// Placeholder for IE
-	//*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*	
-	$('input, textarea').placeholder();
 
 })( jQuery );
