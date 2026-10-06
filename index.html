@@ -63,8 +63,7 @@
   <div class="navbar-default" >
     <div class="container">
      <!-- <a class="print" href="#" onClick="window.print();return false "><i class="fa fa-print"></i></a>	-->
-      <div class="col-md-3"> <a class="brand my-name" href="#about">Martin<br>
-        <span>Purkart</span></a> 
+      <div class="col-md-3"> <a class="brand my-name" href="#about"></a> 
       </div>
       <!-- /.col-md-3 -->
       <div class="col-md-9">
@@ -72,10 +71,7 @@
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
         </div>
         <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav" id="nav">
-            <li class="active"><a href="#about">Home</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-          </ul>
+          <ul class="nav navbar-nav" id="nav"></ul>
         </div>
       </div>
       <!-- /.col-md-9 --> 
@@ -90,28 +86,18 @@
       <div class="row">
         <div class="col-md-3 hidden-xs hidden-sm"> </div>
         <div class="col-md-6 card">
-          <h1>Martin Purkart</h1>
-          <h2>Videography / Editing / Photography /<br /> Social Media Management</h2>
-          <ul class="social hidden-xs hidden-sm">
-           <li><a href="https://www.youtube.com/@mworksvisuals" target="_blank" data-original-title="YouTube"><i class="fa fa-youtube"></i></a></li>
-            <!-- <li><a href="#" title="" data-original-title="instagram"><i class="fa fa-instagram"></i></a></li> -->
-            <li><a href="https://atanetan.pixieset.com/ane/" target="_blank" title="pixieset" data-original-title="pixieset"><i class="fa fa-camera"></i></a></li>
-            <!-- <li><a href="#" title="" data-original-title="linkedin"><i class="fa fa-linkedin"></i></a></li> -->
-          </ul>
+          <h1 id="site-heading"></h1>
+          <h2 id="site-tagline"></h2>
+          <ul class="social hidden-xs hidden-sm"></ul>
         </div>
         <!--/.col-md-6 -->
         <div class="col-md-2">
           <address>
-          <p class="phone"><i class="fa fa-mobile"></i>&nbsp; 0482 053 511</p>
-          <p><i class="fa fa-envelope"></i>&nbsp; <a href="mailto:martinworks@zohomail.com.au"> martinworks@zohomail.com.au</a></p>
+          <p class="phone"><i class="fa fa-mobile"></i>&nbsp; <span id="site-phone"></span></p>
+          <p><i class="fa fa-envelope"></i>&nbsp; <a id="site-email" href=""></a></p>
           <!-- <p><i class="fa fa-download"></i>&nbsp; <a href="resume.pdf" target="_blank"> Download Resume</a></p> -->
           </address>
-           <ul class="social hidden-xl hidden-lg hidden-md">
-            <li><a href="https://www.youtube.com/@mworksvisuals" target="_blank" data-original-title="YouTube"><i class="fa fa-youtube"></i></a></li>
-            <!-- <li><a href="#" title="" data-original-title="instagram"><i class="fa fa-instagram"></i></a></li> -->
-            <li><a href="https://atanetan.pixieset.com/ane/" target="_blank" title="pixieset" data-original-title="pixieset"><i class="fa fa-camera"></i></a></li>
-            <!-- <li><a href="#" title="" data-original-title="linkedin"><i class="fa fa-linkedin"></i></a></li> -->
-          </ul>
+           <ul class="social hidden-xl hidden-lg hidden-md"></ul>
         </div>
       </div>
     </div>
@@ -123,7 +109,7 @@
   <section id="message" class="message section">
     <div class="td1"></div>
     <div class="container">
-      <h2>Professional content creator experienced in fast-paced production environments, delivering consistent, high-quality photo and video content for digital marketing campaigns. </h2>
+      <h2 id="site-intro"></h2>
     </div>
   </section>
   
@@ -135,152 +121,12 @@
     <div class="td1 td3"></div>
     <div class="container">
       <div class="header">
-        <h2>Portfolio</h2>
+        <h2 id="site-portfolio-title"></h2>
         
-        <ul class="subnavigation" id="filters" >
-          <li class="active"><a href="#" data-filter="*">show all</a> <span class="bull">&bull;</span></li>
-           <li><a href="#" data-filter=".reel" title="Reel"> Reel</a> <span class="bull">&bull;</span></li>
-           <li><a href="#" data-filter=".realestate" title="Projects in Real State"> Real Estate</a> <span class="bull">&bull;</span></li>
-           <li><a href="#" data-filter=".construction" title="Projects in Construction / Trades"> Construction / Trades</a> <span class="bull">&bull;</span></li>
-           <li><a href="#" data-filter=".socials" title="Projects in Socials"> Socials</a> <span class="bull">&bull;</span></li>
-           <li><a href="#" data-filter=".training" title="Projects in Training"> Training</a> <span class="bull">&bull;</span></li>
-           <li><a href="#" data-filter=".events" title="Projects in Events"> Events</a> </li>
-        </ul>
+        <ul class="subnavigation" id="filters" ></ul>
         
       </div>
-      <div id="container" class="container-portfolio" >
-        <div class="col-md-4 element reel" >
-          <div class="item-content">
-            <div class="img"> <a href="reel.html" class="open-popup"> <img width="283" src="img/Reel.jpg" class="attachment-project-thumb wp-post-image" alt="Reel"> </a>
-              <div class="img-hover"> <a href="reel.html" class="open-popup">View </a></div>
-            </div>
-            <div class="txt">
-              <h4><a href="reel.html" title="Reel" class="open-popup">Reel</a></h4>
-              <p>Filming and interviewing workshop participants captures authentic ... <a href="reel.html" class="open-popup more">View</a> <i class="fa fa-film"></i></p>
-            </div>
-            <!--/.txt --> 
-          </div>
-          <!--/.item-content --> 
-        </div>
-        <!--/.col-md-4 -->
-        <div class="col-md-4 element reel" >
-          <div class="item-content">
-            <div class="img"> <a href="shoteth.html" class="open-popup"> <img width="283" src="img/Shoteth.jpg" class="attachment-project-thumb wp-post-image" alt="Shooteth"> </a>
-              <div class="img-hover"> <a href="shoteth.html" class="open-popup">View </a></div>
-            </div>
-            <div class="txt">
-              <h4><a href="shoteth.html" title="Reel" class="open-popup">Shoteth</a></h4>
-              <p>Filming and editing using professional video equipment to produce high-quality ... <a href="shoteth.html" class="open-popup more">View</a> <i class="fa fa-film"></i></p>
-            </div>
-            <!--/.txt --> 
-          </div>
-          <!--/.item-content --> 
-        </div>
-        <!--/.col-md-4 -->
-        <div class="col-md-4 element realestate" >
-          <div class="item-content">
-            <div class="img"> <a href="real-estate.html" class="open-popup"> <img width="283" src="img/RealEstate.jpg" class="attachment-project-thumb wp-post-image" alt="Real Estate"> </a>
-              <div class="img-hover"> <a href="real-estate.html" class="open-popup">View </a></div>
-            </div>
-            <div class="txt">
-              <h4><a href="real-estate.html" title="Real Estate" class="open-popup">Real Estate</a></h4>
-              <p>Filming and editing high-quality real estate video content, including cinematic ... <a href="real-estate.html" class="open-popup more">View</a> <i class="fa fa-film"></i></p>
-            </div>
-            <!--/.txt --> 
-          </div>
-          <!--/.item-content --> 
-        </div>
-        <!--/.col-md-4 -->
-        <div class="col-md-4 element socials" >
-          <div class="item-content">
-            <div class="img"> <a href="socials.html" class="open-popup"> <img width="283" src="img/Socials.jpg" class="attachment-project-thumb wp-post-image" alt="Socials"> </a>
-              <div class="img-hover"> <a href="socials.html" class="open-popup">View </a> </div>
-            </div>
-            <div class="txt">
-              <h4><a href="socials.html" title="Socials" class="open-popup">Socials</a></h4>
-              <p>Professional videography for social media focuses on capturing the essence of ... <a href="socials.html" class="open-popup more">View</a> <i class="fa fa-film"></i></p>
-            </div>
-            <!--/.txt --> 
-          </div>
-          <!--/.item-content --> 
-        </div>
-        <!--/.col-md-4 -->
-        
-        <div class="col-md-4 element construction" >
-          <div class="item-content">
-            <div class="img"> <a href="renovation.html" class="open-popup"> <img width="283" src="img/Renovation.jpg" class="attachment-project-thumb wp-post-image" alt="Property Renovation Transformation"> </a>
-              <div class="img-hover"> <a href="renovation.html" class="open-popup">View</a> </div>
-            </div>
-            <div class="txt">
-              <h4><a href="renovation.html" title="Property Renovation Transformation" class="open-popup">Property Renovation Transformation</a></h4>
-              <p>Documenting the transformation of a renovated investment ... <a href="renovation.html" class="open-popup more">View</a> <i class="fa fa-film"></i></p>
-            </div>
-            <!--/.txt --> 
-          </div>
-          <!--/.item-content --> 
-        </div>
-        <!--/.col-md-4 -->
-
-        <div class="col-md-4 element construction" >
-          <div class="item-content">
-            <div class="img"> <a href="construction-social.html" class="open-popup"> <img width="283" src="img/Construction.jpg" class="attachment-project-thumb wp-post-image" alt="Construction Social Media Update"> </a>
-              <div class="img-hover"> <a href="construction-social.html" class="open-popup">View</a> </div>
-            </div>
-            <div class="txt">
-              <h4><a href="construction-social.html" title="Construction Social Media Update" class="open-popup">Construction Social Media Update</a></h4>
-              <p>Construction companies are increasingly using Instagram videos ... <a href="construction-social.html" class="open-popup more">View</a> <i class="fa fa-film"></i></p>
-            </div>
-            <!--/.txt --> 
-          </div>
-          <!--/.item-content --> 
-        </div>
-        <!--/.col-md-4 -->
-
-        <div class="col-md-4 element construction" >
-          <div class="item-content">
-            <div class="img"> <a href="demolition-social.html" class="open-popup"> <img width="283" src="img/Demolition.jpg" class="attachment-project-thumb wp-post-image" alt="Demolition Social Media Update"> </a>
-              <div class="img-hover"> <a href="demolition-social.html" class="open-popup">View</a> </div>
-            </div>
-            <div class="txt">
-              <h4><a href="demolition-social.html" title="Demolition Social Media Update" class="open-popup">Demolition Social Media Update</a></h4>
-              <p>Professional social media updates give demolition companies the chance ... <a href="demolition-social.html" class="open-popup more">View</a> <i class="fa fa-film"></i></p>
-            </div>
-            <!--/.txt --> 
-          </div>
-          <!--/.item-content --> 
-        </div>
-        <!--/.col-md-4 -->
-
-        <div class="col-md-4 element training" >
-          <div class="item-content">
-            <div class="img"> <a href="workshop.html" class="open-popup"> <img width="283" src="img/Workshop.jpg" class="attachment-project-thumb wp-post-image" alt="Workshop"> </a>
-              <div class="img-hover"> <a href="workshop.html" class="open-popup">View</a> </div>
-            </div>
-            <div class="txt">
-              <h4><a href="workshop.html" title="Workshop" class="open-popup">Traditional Timber Frame Workshops</a></h4>
-              <p>Filming and interviewing workshop participants captures authentic ... <a href="workshop.html" class="open-popup more">View</a> <i class="fa fa-film"></i></p>
-            </div>
-            <!--/.txt --> 
-          </div>
-          <!--/.item-content --> 
-        </div>
-        <!--/.col-md-4 -->
-        <div class="col-md-4 element events" >
-          <div class="item-content">
-            <div class="img"> <a href="event.html" class="open-popup"> <img width="283" src="img/Event.jpg" class="attachment-project-thumb wp-post-image" alt="Events"> </a>
-              <div class="img-hover"> <a href="event.html" class="open-popup">View</a> </div>
-            </div>
-            <div class="txt">
-              <h4><a href="event.html" title="Events" class="open-popup">Fire Dance Event</a></h4>
-              <p>Capturing and editing event footage highlights the energy, key moments, and atmosphere of any occasion ... <a href="event.html" class="open-popup more">View</a> <i class="fa fa-film"></i></p>
-            </div>
-            <!--/.txt --> 
-          </div>
-          <!--/.item-content --> 
-        </div>
-        <!--/.col-md-4 -->
-
-      </div>
+      <div id="container" class="container-portfolio" ></div>
     </div>
   </section>
   <!--/.portfolio -->
@@ -291,7 +137,7 @@
   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
   <section class="parallax section message">
     <div class="td1"></div>
-    <h2>From concept to polished final cut</h2>
+    <h2 id="site-quote"></h2>
     <!-- <small>William Shakespeare</small> -->
   </section>
   <!--/.parallax -->
@@ -302,7 +148,7 @@
   <footer class="footer">
     <div class="container"> 
     <div class="cr">
-    	 <strong>Martin Purkart</strong> &copy; 2026 - All Rights Reserved</div>
+    </div>
     
     <!-- <i class="fa fa-quote-left"></i> From concept to polished final cut <i class="fa fa-quote-right"></i> </div> -->
   </footer>
@@ -338,6 +184,8 @@
 <script type="text/javascript" src="js/jquery.nicescroll.js"></script> 
 <script type="text/javascript" src="js/jquery.fitvids.js"></script>
 <script type="text/javascript" src="js/jquery.placeholder.js"></script> 
+<script type="text/javascript" src="js/content.js"></script>
+<script type="text/javascript" src="js/content-render.js"></script>
 <script type="text/javascript" src="js/scripts.js"></script> 
 
 
